@@ -64,6 +64,10 @@ if __name__ == "__main__":
         type=int,
         default=60*60,
         help='Sleep time between checks, default is 3600 == 1 hour')
+    parser.add_argument(
+        '--once',
+        action='store_true',
+        help="Run only once (doesn't start loop)")
     args = parser.parse_args()
     
     app = QApplication(sys.argv)
@@ -82,5 +86,8 @@ if __name__ == "__main__":
             
             if confirmed:
                 check_ssh_log.confirm_new()
-
-        time.sleep(args.sleep)
+        
+        if args.once:
+            break
+        else:
+            time.sleep(args.sleep)
