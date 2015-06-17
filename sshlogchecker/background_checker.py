@@ -54,10 +54,9 @@ class InfoDialog(QMainWindow):
     def getConfirmed(self):
         return self.confirmed
 
-
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(
-        description='Background SSH log checker'
+        description='SSH log checker'
     )
     parser.add_argument(
         '-s', '--sleep',
@@ -91,3 +90,6 @@ if __name__ == "__main__":
             break
         else:
             time.sleep(args.sleep)
+            
+if __name__ == "__main__":
+    main()

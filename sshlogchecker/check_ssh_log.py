@@ -3,17 +3,21 @@
 
 import os, sys
 
+import appdirs
+
 from datetime import datetime
 from dateutil.parser import parse
 
 # list paths to logfiles. from older to newest
 logfiles_default = ['/var/log/auth.log.1', '/var/log/auth.log']
 
+app_data_dir = appdirs.user_data_dir('sshlogchecker', 'jirka642')
+if not os.path.exists(app_data_dir):
+    os.makedirs(app_data_dir)
 # file/path where to save info about when was last log check
-last_check_file = '.ssh_log_last_check'
-
+last_check_file = os.path.join(app_data_dir, '.ssh_log_last_check') 
 # file/path where to save new info parsed from logfiles
-new_info_file = '.ssh_log_new_info'
+new_info_file = os.path.join(app_data_dir, '.ssh_log_new_info') 
 
 def format_info(info):
     time = info[0].isoformat()
