@@ -7,6 +7,19 @@ install: (Debian based)
     make install install_dep
 
 
-run with:
+Usage
+-----
+
+run from commandline with:
 
     sshlogchecker
+
+
+To autostart script with conky, add to .conkyrc:
+
+    ${execpi 3600 sshlogchecker --once > /dev/null }
+
+
+Show commandline options with:
+
+    sshlogchecker --help
