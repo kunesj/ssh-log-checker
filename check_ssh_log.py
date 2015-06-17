@@ -2,7 +2,6 @@
 #coding: utf-8
 
 import os, sys
-import traceback
 
 from datetime import datetime
 from dateutil.parser import parse
@@ -86,6 +85,25 @@ def check_ssh_log(logfiles=None):
             f.write(line)
             
     return new_shh_logins
+    
+def last_new_confirmed():
+    """
+    Returns False if new_info_file is not empty
+    """
+    empty = True
+    if os.path.isfile(new_info_file):
+        with open(new_info_file, 'r') as f:
+            if '' != f.read().strip():
+                empty = False
+                
+    return empty
+                
+def confirm_new():
+    """
+    Empties new_info_file
+    """
+    with open(new_info_file, 'w') as f:
+        f.write()
 
 if __name__ == "__main__":
     check_ssh_log()
