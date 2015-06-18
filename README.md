@@ -1,11 +1,11 @@
 SSH log checker
 ===============
-Periodically check SSH logs and warns user with popup if there are any new logins. Linux only.
+Periodically check SSH logs and warns user with popup if there are any new logins or login attempts. Linux only.
 
 Install 
 -------
 
-To install into system path run: (if it fails for first try, try again)
+To install into system path run: (if it fails on first try, try second time)
 
     make install
 
