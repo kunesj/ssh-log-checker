@@ -17,7 +17,7 @@ run from commandline with:
 
 To autostart script with conky, add to .conkyrc:
 
-    ${execpi 3600 sshlogchecker --once > /dev/null }
+    ${execpi 300 sshlogchecker --once > /dev/null }
 
 
 Show commandline options with:

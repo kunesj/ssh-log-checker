@@ -15,9 +15,9 @@ app_data_dir = appdirs.user_data_dir('sshlogchecker', 'jirka642')
 if not os.path.exists(app_data_dir):
     os.makedirs(app_data_dir)
 # file/path where to save info about when was last log check
-last_check_file = os.path.join(app_data_dir, '.ssh_log_last_check') 
+last_check_file = os.path.join(app_data_dir, 'ssh_log_last_check') 
 # file/path where to save new info parsed from logfiles
-new_info_file = os.path.join(app_data_dir, '.ssh_log_new_info') 
+new_info_file = os.path.join(app_data_dir, 'ssh_log_new_info') 
 
 def format_info(info):
     time = info[0].isoformat()
@@ -73,6 +73,8 @@ def check_ssh_log(logfiles=None):
             continue # ignore SSH startup message
         if info[3].endswith('terminating.'):
             continue # ignore SSH shutdown message
+        if info[3].startswith("Received disconnect from"):
+            continue # ignore SSH logouts
         
         if last_check < info[0]:
             new_shh_logins.append(info)

@@ -61,8 +61,8 @@ def main():
     parser.add_argument(
         '-s', '--sleep',
         type=int,
-        default=60*60,
-        help='Sleep time between checks, default is 3600 == 1 hour')
+        default=300,
+        help='Sleep time between checks, default is 300 seconds')
     parser.add_argument(
         '--once',
         action='store_true',
