@@ -1,5 +1,7 @@
 SSH log checker
 ===============
+[![Code Climate](https://codeclimate.com/github/kunesj/ssh-log-checker/badges/gpa.svg)](https://codeclimate.com/github/kunesj/ssh-log-checker)
+
 Periodically check SSH logs and warns user with popup if there are any new logins or login attempts. Linux only.
 
 Install 
