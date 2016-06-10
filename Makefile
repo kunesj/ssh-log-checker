@@ -4,14 +4,14 @@ help:
 	@echo "To install dependencies: make install_dep"
 
 install: clean
-	sudo python setup.py build install
-	
+	sudo python3 setup.py build install
+
 install_dep:
-	sudo apt-get install python python-pip python-qt4 
-	sudo pip install appdirs python-dateutil
-	
+	sudo apt-get install python3 python3-pip python3-pyqt4
+	sudo pip3 install appdirs python-dateutil
+
 run:
-	python -m sshlogchecker
+	python3 -m sshlogchecker
 
 remove_user_data:
 	rm -rf ~/.local/share/sshlogchecker

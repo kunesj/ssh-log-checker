@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 
 from setuptools import setup
@@ -23,6 +23,6 @@ setup(name='sshlogchecker',
           'setuptools',
           'appdirs',
           'python-dateutil'
-          # python-qt4 
+          # python3-qt4
         ],
     )

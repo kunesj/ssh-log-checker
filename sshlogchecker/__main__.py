@@ -1,5 +1,5 @@
-#!python2
-# coding: utf-8
+#!/usr/bin/env python3
+# encoding: utf-8
 
-from background_checker import main
+from sshlogchecker.background_checker import main
 main()
