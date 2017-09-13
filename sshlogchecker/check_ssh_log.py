@@ -75,6 +75,8 @@ def check_ssh_log(logfiles=None):
             continue # ignore SSH shutdown message
         if info[3].startswith("Received disconnect from"):
             continue # ignore SSH logouts
+        if info[3].endswith("restarting."):
+            continue # ignore SSH restarts
 
         if last_check < info[0]:
             new_shh_logins.append(info)
